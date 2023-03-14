@@ -4,11 +4,44 @@
   
     
     <entry>
+      <title>使用docker复现web题</title>
+      <link href="/2023/03/14/docker1/"/>
+      <url>/2023/03/14/docker1/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="一、首先下载docker和docker-docker-compose"><a href="#一、首先下载docker和docker-docker-compose" class="headerlink" title="一、首先下载docker和docker-docker-compose"></a>一、首先下载docker和docker-docker-compose</h3><p>我使用的服务器是ubuntu20</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install docker.io</span><br><span class="line">sudo apt install docker-compose</span><br></pre></td></tr></table></figure><h3 id="二、查看docker和docker-compose是否下载成功"><a href="#二、查看docker和docker-compose是否下载成功" class="headerlink" title="二、查看docker和docker-compose是否下载成功"></a>二、查看docker和docker-compose是否下载成功</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker -v</span><br><span class="line">docker-compose version</span><br></pre></td></tr></table></figure><h3 id="三、下载题目并启动docker"><a href="#三、下载题目并启动docker" class="headerlink" title="三、下载题目并启动docker"></a>三、下载题目并启动docker</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/CTFTraining/0ctf_2016_unserialize.git /root/CTF-WEBti/</span><br><span class="line">cd /root/CTF-WEBti/</span><br><span class="line">service docker start</span><br><span class="line">docker-compose up -d</span><br><span class="line">docker ps                                                      #查看容器是否开启</span><br></pre></td></tr></table></figure><h3 id="四、端口映射到公网ip"><a href="#四、端口映射到公网ip" class="headerlink" title="四、端口映射到公网ip"></a>四、端口映射到公网ip</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 8300(服务器开启的端口):80(容器内部端口) &lt;image-name&gt;</span><br></pre></td></tr></table></figure><p>如果不确定容器内部端口，可使用如下命令查看：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker port &lt;container-id&gt;</span><br><span class="line">container-id 可以使用docker ps命令查看</span><br></pre></td></tr></table></figure><p>最后访问 公网ip：端口号  即可</p><img src="https://jekyllxhexo.oss-cn-hangzhou.aliyuncs.com/202303141651621.png" style="zoom:40%" /><h3 id="五、服务器开启端口"><a href="#五、服务器开启端口" class="headerlink" title="五、服务器开启端口"></a>五、服务器开启端口</h3><p><img src="https://jekyllxhexo.oss-cn-hangzhou.aliyuncs.com/202303141659844.png" alt="image-20230314165907805"></p><p>记得添加规则，否则无法访问</p><h3 id="六、停止，删除容器"><a href="#六、停止，删除容器" class="headerlink" title="六、停止，删除容器"></a>六、停止，删除容器</h3><p>如果想停止容器</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop &lt;container-id&gt;</span><br></pre></td></tr></table></figure><p>删除容器</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm &lt;container-id&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> docker </category>
+          
+          <category> 服务器 </category>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> CTF </tag>
+            
+            <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>不知道写啥</title>
       <link href="/2023/02/03/suibi/"/>
       <url>/2023/02/03/suibi/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一些想说的话"><a href="#一些想说的话" class="headerlink" title="一些想说的话~"></a>一些想说的话~</h1><p>大家好~欢迎来到我的秘密基地</p><p>终于部署完了，开心！一步步下来真的花了我不少功夫呢</p><p>希望之后能够继续加油鸭~之后会陆续更新一些wp以及技术文章。</p><p>这次butterfly的魔改参考了不少文章和大佬的博客，（不完全统计）链接如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">https://blog.imzjw.cn/</span><br><span class="line">https://butterfly.zhheo.com/</span><br><span class="line">https://haiyong.site/</span><br><span class="line">https://android99.com/</span><br><span class="line">https://moonshuo.cn/</span><br><span class="line">https://akilar.top/</span><br></pre></td></tr></table></figure><p>侧边栏个人资料卡图标来源：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.iconfont.cn/</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一些想说的话"><a href="#一些想说的话" class="headerlink" title="一些想说的话~"></a>一些想说的话~</h1><p>大家好~欢迎来到我的秘密基地</p><p>博客重建完毕x</p><p>希望之后能够继续加油鸭~之后会陆续更新一些wp以及技术文章。</p><p>这次butterfly的魔改参考了不少文章和大佬的博客，（不完全统计）链接如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">https://blog.imzjw.cn/</span><br><span class="line">https://butterfly.zhheo.com/</span><br><span class="line">https://haiyong.site/</span><br><span class="line">https://android99.com/</span><br><span class="line">https://moonshuo.cn/</span><br><span class="line">https://akilar.top/</span><br></pre></td></tr></table></figure><p>侧边栏个人资料卡图标来源：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.iconfont.cn/</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
